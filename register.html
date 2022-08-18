@@ -278,13 +278,13 @@
                                     <div class="input-field two-Input-row ">
                                         <div class="twoInput">
                                             <i class="fa-light fa-user"></i>
-                                            <input type="text" name="firstName" placeholder="Setlor First Name"
+                                            <input type="text" name="setlorFirstName" placeholder="Setlor First Name"
                                                 value="" id="setlorFirstName" class="input">
                                         </div>
 
                                         <div class="twoInput">
                                             <i class="fa-light fa-user"></i>
-                                            <input type="text" name="lastName" placeholder="Setlor Last Name  "
+                                            <input type="text" name="setlorLastName" placeholder="Setlor Last Name  "
                                                 id="setlorLastName">
                                         </div>
 
@@ -292,25 +292,25 @@
                                     <div class="gender-container">
 
                                         <h3 class="gender-title">Gender</h3>
-                                        <input type="radio" name="setlorGender" id="setlorMale"><label for="setlorMale"><i
+                                        <input type="radio" name="setlorGender" id="setlorMale" value="Male"><label for="setlorMale" ><i
                                                 class="fa-light fa-mars"></i> &nbsp;
                                             Male</label>
 
-                                        <input type="radio" name="setlorGender" id="setlorFemale"><label for="setlorFemale"> <i
+                                        <input type="radio" name="setlorGender" id="setlorFemale" value="Female"><label for="setlorFemale"> <i
                                                 class="fa-light fa-venus"></i> &nbsp;
                                             Female</label>
-                                        <input type="radio" name="setlorGender" id="setlorTransgender"><label for="setlorTransgender"><i
+                                        <input type="radio" name="setlorGender" value="Transgender" id="setlorTransgender"><label for="setlorTransgender"><i
                                                 class="fa-light fa-transgender"></i> &nbsp;Transgender</label>
                                     </div>
 
                                     <div class="input-field">
                                         <i class="fa-thin fa-mobile"></i>
-                                        <input type="text" name="mobile" placeholder="Mobile No" id="setlorMobileNo">
+                                        <input type="text" name="setlorMobile" placeholder="Mobile No" id="setlorMobileNo">
                                     </div>
 
                                     <div class="input-field">
                                         <i class="fa-thin fa-envelope"></i>
-                                        <input type="email" name="email" placeholder="Email " id="setlorEmail">
+                                        <input type="email" name="setlorEmail" placeholder="Email " id="setlorEmail">
                                     </div>
 
                                     <div class="prev-next-btn">
@@ -355,7 +355,7 @@
 
                                         <div class="input-field">
                                             <i class="fa-thin fa-input-numeric"></i>
-                                            <input type="text" name="email" placeholder="Pincode  " class="address"
+                                            <input type="text" name="ngoPincode" placeholder="Pincode  " class="address"
                                                 id="ngoPincode">
                                         </div>
 
@@ -380,7 +380,7 @@
                                                 Hungerness
                                                 <!-- </div> -->
                                                 <span class="checkmark"></span>
-                                                <input type="checkbox" id="food" class="workingSector" value="food">
+                                                <input type="checkbox" id="food" class="workingSector" value="food" name="workingSector[]">
                                             </label>
                                            
 
@@ -389,7 +389,7 @@
                                                 <i class="fa-solid fa-paw-simple"></i> <br>
                                                      Rescue
                                                <!-- </div>  -->
-                                            <input type="checkbox" id="rescue" class="workingSector" value="rescue">
+                                            <input type="checkbox" id="rescue" class="workingSector" value="rescue" name="workingSector[]">
                                             </label>
                                         </div>
 
@@ -399,7 +399,7 @@
                                                     <i class="fa-solid fa-bed-pulse"></i> <br>
                                                     Health
                                                 <!-- </div> -->
-                                                <input type="checkbox" id="health" class="workingSector" value="health">
+                                                <input type="checkbox" id="health" class="workingSector" value="health" name="workingSector[]">
                                             </label>
                                           
                                         
@@ -408,7 +408,7 @@
                                                     <i class="fa-solid fa-book-copy"></i><br>
                                                    Education
                                                 <!-- </div> -->
-                                                <input type="checkbox" id="eduction" class="workingSector" value="education">
+                                                <input type="checkbox" id="eduction" class="workingSector" value="education" name="workingSector[]">
                                             </label>
                                         </div>
 
@@ -431,7 +431,7 @@
 
                                     <div class="input-field">
                                         <i class="fa-thin fa-lock"></i>
-                                        <input type="password" name="password" placeholder="Enter Password "
+                                        <input type="password" name="ngoPassword" placeholder="Enter Password "
                                             class="password" id="ngoPassword">
                                     </div>
 
