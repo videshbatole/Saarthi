@@ -199,7 +199,11 @@ $(document).ready(function () {
       $("#confirmPassword").val()
     );
     if (passwor === true) {
-      alertify.success("success");
+         ajaxOperation(
+           "POST",
+           "http://localhost/Saarthi.live/php/userRegister.php",
+           "individual","#step1","#step3"
+         );
     }
   });
 
@@ -321,12 +325,11 @@ $(document).ready(function () {
       $("#ngoConfirmPassword").val()
     );
     if (password === true) {
-      let response = ajaxOperation(
+      ajaxOperation(
         "POST",
         "http://localhost/Saarthi.live/php/insert.php",
-        "ngo"
+        "ngo","#nstep1", "#nstep5"
       );
-      console.log(response);
 
       //  var formData = {
       //    name: $("#name").val(),
@@ -488,7 +491,7 @@ function checkBoxValidation(count, className) {
   });
 }
 
-function ajaxOperation(type, url, formId) {
+function ajaxOperation(type, url, formId ,display ,hide) {
   // let url = "http://localhost/Saarthi.live/php/insert.php";
   // let type = "GET";
   var data = $("#" + formId + "").serialize();
@@ -500,7 +503,10 @@ function ajaxOperation(type, url, formId) {
     success: function (result) {
       if (result === "Registered") {
         alertify.success("Successfully Registered");
-        
+       document.getElementById(""+formId+"").reset();
+        step(display, hide);
+      } else {
+        alertify.error(result);
       }
     },
   });

@@ -8,24 +8,6 @@ $educationSector = "No";
 
 $ngoId = strtoupper(uniqid());
  $checkBox = $_POST['workingSector'] ;
-// echo $_POST['ngoName'];
-// echo $_POST['ngoRegistrationNo'];
-// echo strtoupper($_POST['ngoPanNo']);
-// echo $_POST['establishDate'];
-// echo $_POST['ngoContactNo'];
-// echo $_POST['ngoEmail'];
-// echo $_POST['setlorFirstName'];
-// echo $_POST['setlorLastName'];
-// echo $_POST['setlorGender'];
-// echo $_POST['setlorMobile'];
-// echo $_POST['setlorEmail'];
-// echo $_POST['ngoAddress'];
-// echo $_POST['ngoCountry'];
-// echo $_POST['ngoState'];
-// echo $_POST['ngoCity'];
-// echo $_POST['ngoPincode'];
-//echo $_POST['ngoPassword'];
-
 
 for ($i = 0 ; $i< sizeof($checkBox);$i++){
 
@@ -53,7 +35,6 @@ $sql = "INSERT INTO `ngo`( `ngoName`, `ngoRegistrationNo`, `ngoPanNo`, `establis
 
 function  runQuery($sql ,$conn){
     if ($conn->query($sql) === TRUE) {
-
         echo "Registered";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

@@ -17,3 +17,4 @@ ngo.addEventListener("click", function () {
   form1.style.display = "none";
   form2.style.display = "block";
 });
+
