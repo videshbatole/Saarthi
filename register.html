@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saarthi | Home</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- font  awsome fonts link -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+</head>
+
+
+<body>
+
+    <!--preloader -->
+    <div class="preloaderBg" id="preloader">
+        <div class="preloader"></div>
+        <div class="preloader2"></div>
+    </div>
+    <!---Navigation  bar-->
+    <nav class="side-margin">
+
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#who">Who We Are</a></li>
+            <li><a href="index.html#what">What We Do</a></li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="login.html" class="login">Login </a></li>
+        </ul>
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+
+    <!--hero section-->
+
+    <section class="login-section side-margin">
+
+        <div class="login-container">
+
+
+            <div class="image-section">
+
+                <img src="img/login background.png" alt="image">
+
+                <div class="image-text">
+
+                    <div class="logo login-logo"><img src="img/Saarthi.png" alt=""></div>
+                    <div class="text-area">
+                        <h1>Nice To See You</h1>
+                        <p>If you dont have account pls register first</p>
+
+                        <a href="login.html"><button class="register-btn">login</button></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h1>Register</h1>
+                <div class="login-form">
+
+                    <div class="user-type">
+
+                        <div class="user selected " id="user1">
+                            <i class="fa-solid fa-user"></i> <br>
+                            <span>Individual</span>
+                        </div>
+
+                        <div class="user  " id="user2">
+                            <i class="fa-solid fa-building"></i><br>
+                            <span>Ngo</span>
+                        </div>
+
+                    </div>
+                    <!-- ----------------------------------Individual  Form Start  herer  -->
+                    <form action="" method="post" id="individual">
+                        <div class="form">
+
+                            <div id="step1">
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Personal Details</h3>
+
+                                    <div class="input-field two-Input-row ">
+                                        <div class="twoInput">
+                                            <i class="fa-light fa-user"></i>
+                                            <input type="text" name="firstName" placeholder="First Name" value=""
+                                                id="firstName" class="input">
+                                        </div>
+
+                                        <div class="twoInput">
+                                            <i class="fa-light fa-user"></i>
+                                            <input type="text" name="lastName" placeholder="Last Name  " id="lastName">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-calendar-days"></i>
+                                        <input type="text" name="dateOfBirth" placeholder="Date of Birth" id="dateOfBirth" class="datepicker">
+                                    </div>
+                                    <!-- onfocus="(this.type='date')" -->
+                                    <div class="gender-container">
+
+                                        <h3 class="gender-title">Gender</h3>
+                                        <input type="radio" name="gender" id="Male"><label for="Male"><i
+                                                class="fa-light fa-mars"></i> &nbsp; Male</label>
+
+                                        <input type="radio" name="gender" id="Female"><label for="Female"> <i
+                                                class="fa-light fa-venus"></i> &nbsp; Female</label>
+                                        <input type="radio" name="gender" id="transgender"><label for="transgender"><i
+                                                class="fa-light fa-transgender"></i> &nbsp;Transgender</label>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-mobile"></i>
+                                        <input type="text" name="mobile" placeholder="Mobile No" id="mobile">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-envelope"></i>
+                                        <input type="email" name="email" placeholder="Email " id="email">
+                                    </div>
+
+                                    <button class="login-btn" type="button" id="first-next">Next</button>
+
+                                </div>
+                            </div>
+
+                            <div id="step2">
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Address Details</h3>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-location-dot"></i>
+                                        <input type="text" name="address" placeholder="Address " class="address"
+                                            id="address">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-earth-americas"></i>
+                                        <select name="country" id="country" class="address ">
+                                            <option value="" selected disabled> Country </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-map-location"></i>
+                                        <select name="state" id="state" class="address ">
+                                            <option value="" selected disabled> State</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-house-building"></i>
+                                        <select name="state" id="city" class="address ">
+                                            <option value="" selected disabled> City </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-input-numeric"></i>
+                                        <input type="text" name="email" placeholder="Pincode  " class="address"
+                                            id="pincode">
+                                    </div>
+
+                                    <div class="prev-next-btn">
+                                        <button class=" prev-btn" type="button" id="prev-1">Prev</button>
+                                        <button class="login-btn" type="button" id="next-2">Next</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <div id="step3">
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Credential Details</h3>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-lock"></i>
+                                        <input type="password" name="password" placeholder="Enter Password "
+                                            class="password" id="password">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-lock"></i>
+                                        <input type="password" name="confirmPassword" placeholder="confirmPassword"
+                                            class="ConfirmPassword" id="confirmPassword">
+                                    </div>
+                                    <div class="prev-next-btn">
+                                        <button class=" prev-btn" type="button" id="prev-2">Prev</button>
+                                        <button class="login-btn" type="submit" >Register</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- ----------------------------------Ngo Form Start  herer  -->
+
+                    <form action="" method="post" id="ngo">
+
+                        <div class="form">
+
+                            <div id="nstep1">
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">NGO Details</h3>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-building"></i>
+                                        <input type="text" name="ngoName" placeholder="NGO Name" id="ngoName">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-building"></i>
+                                        <input type="text" name="ngoRegistrationNo" placeholder="NGO Registration No"
+                                            id="ngoRegistrationNo">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-id-card"></i>
+                                        <input type="text" name="ngoPanNo" placeholder="NGO PAN No" id="panNo">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-calendar-days"></i>
+                                        <input type="text" name="establishDate" placeholder="Establish Date" id="establishDate" class="datepicker">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-phone-office"></i>
+                                        <input type="text" name="ngoContactNo" placeholder="Contact No" id="ngoMobileNo">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-envelope"></i>
+                                        <input type="email" name="ngoEmail" placeholder="Email " id="ngoEmail">
+                                    </div>
+
+                                    <button class="login-btn" type="button" id="nfirst-next">Next</button>
+
+                                </div>
+                            </div>
+                            <div id="nstep2"  >
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Setlor Details</h3>
+
+                                    <div class="input-field two-Input-row ">
+                                        <div class="twoInput">
+                                            <i class="fa-light fa-user"></i>
+                                            <input type="text" name="firstName" placeholder="Setlor First Name"
+                                                value="" id="setlorFirstName" class="input">
+                                        </div>
+
+                                        <div class="twoInput">
+                                            <i class="fa-light fa-user"></i>
+                                            <input type="text" name="lastName" placeholder="Setlor Last Name  "
+                                                id="setlorLastName">
+                                        </div>
+
+                                    </div>
+                                    <div class="gender-container">
+
+                                        <h3 class="gender-title">Gender</h3>
+                                        <input type="radio" name="setlorGender" id="setlorMale"><label for="setlorMale"><i
+                                                class="fa-light fa-mars"></i> &nbsp;
+                                            Male</label>
+
+                                        <input type="radio" name="setlorGender" id="setlorFemale"><label for="setlorFemale"> <i
+                                                class="fa-light fa-venus"></i> &nbsp;
+                                            Female</label>
+                                        <input type="radio" name="setlorGender" id="setlorTransgender"><label for="setlorTransgender"><i
+                                                class="fa-light fa-transgender"></i> &nbsp;Transgender</label>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-mobile"></i>
+                                        <input type="text" name="mobile" placeholder="Mobile No" id="setlorMobileNo">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-envelope"></i>
+                                        <input type="email" name="email" placeholder="Email " id="setlorEmail">
+                                    </div>
+
+                                    <div class="prev-next-btn">
+                                        <button class=" prev-btn" type="button" id="nprev-1">Prev</button>
+                                        <button class="login-btn" type="button" id="nnext-2">Next</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div id="nstep3" >
+                                    <div class="form-input">
+
+                                        <h3 class="step-detail">Address Details</h3>
+
+                                        <div class="input-field">
+                                            <i class="fa-thin fa-location-dot"></i>
+                                            <input type="text" name="ngoAddress" placeholder="Ngo Address " class="address "
+                                                id="ngoAddress">
+                                        </div>
+
+                                        <div class="input-field">
+                                            <i class="fa-thin fa-earth-americas"></i>
+                                            <select name="ngoCountry" id="ngoCountry" class="address ">
+                                                <option value="" selected disabled> Country </option>
+                                            </select>
+                                        </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-map-location"></i>
+                                        <select name="ngoState" id="ngoState" class="address ">
+                                            <option value="" selected disabled> State</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-house-building"></i>
+                                        <select name="ngoCity" id="ngoCity" class="address">
+                                            <option value="" selected disabled> City </option>
+                                        </select>
+                                    </div>
+
+                                        <div class="input-field">
+                                            <i class="fa-thin fa-input-numeric"></i>
+                                            <input type="text" name="email" placeholder="Pincode  " class="address"
+                                                id="ngoPincode">
+                                        </div>
+
+                                        <div class="prev-next-btn">
+                                            <button class=" prev-btn" type="button" id="nprev-2">Prev</button>
+                                            <button class="login-btn" type="button" id="nnext-3">Next</button>
+                                        </div>
+                                    </div>
+                            </div>
+                      
+                            <div id="nstep4" >
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Working Sector</h3>
+
+                                    <div class="working-area-container" id="working-sector">
+                                        <div class="sector-row">
+
+                                            <label for="food" class="hungerLable foodLable" id="foodLable">
+                                                <!-- <div class="hungerLable"> -->
+                                                     <i class="fa-solid fa-burger-soda  "></i> <br>
+                                                Hungerness
+                                                <!-- </div> -->
+                                                <span class="checkmark"></span>
+                                                <input type="checkbox" id="food" class="workingSector" value="food">
+                                            </label>
+                                           
+
+                                            <label for="rescue" class="hungerLable" id="rescueLable">
+                                                <!-- <div class="hungerLable " id="rescuediv"> -->
+                                                <i class="fa-solid fa-paw-simple"></i> <br>
+                                                     Rescue
+                                               <!-- </div>  -->
+                                            <input type="checkbox" id="rescue" class="workingSector" value="rescue">
+                                            </label>
+                                        </div>
+
+                                        <div class="sector-row">
+                                            <label for="health" class="hungerLable " id="healthLable" >
+                                                <!-- <div class="hungerLable sector-selected  " > -->
+                                                    <i class="fa-solid fa-bed-pulse"></i> <br>
+                                                    Health
+                                                <!-- </div> -->
+                                                <input type="checkbox" id="health" class="workingSector" value="health">
+                                            </label>
+                                          
+                                        
+                                            <label for="eduction" class="hungerLable  " id="educationLable">
+                                                <!-- <div class="hungerLable  "> -->
+                                                    <i class="fa-solid fa-book-copy"></i><br>
+                                                   Education
+                                                <!-- </div> -->
+                                                <input type="checkbox" id="eduction" class="workingSector" value="education">
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="prev-next-btn">
+                                        <button class=" prev-btn" type="button" id="nprev-3">Prev</button>
+                                        <button class="login-btn" type="button" id="nnext-4">Next</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <div id="nstep5">
+                                <div class="form-input">
+
+                                    <h3 class="step-detail">Credential Details</h3>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-lock"></i>
+                                        <input type="password" name="password" placeholder="Enter Password "
+                                            class="password" id="ngoPassword">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <i class="fa-thin fa-lock"></i>
+                                        <input type="password" name="confirmPassword" placeholder="confirmPassword"
+                                            class="ConfirmPassword" id="ngoConfirmPassword">
+                                    </div>
+                                    <div class="prev-next-btn">
+                                        <button class=" prev-btn" type="button" id="nprev-4">Prev</button>
+                                        <button class="login-btn" type="submit">Register</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <img src="img/Saarthi.png" alt="logo">
+
+        <div id="contact">
+
+            <div><i class="fa-regular fa-map-location-dot"> </i><span> Pune maharashtra india</span> </div>
+            <div><i class="fa-light fa-at"> </i> <span> Saarthi.support@gmail.com</span> </div>
+            <div><i class="fa-solid fa-phone"> </i> <span> 2010210312465</span></div>
+
+        </div>
+
+        <hr>
+        <div class="copyrights"><i class="fa-solid fa-copyright"> </i> 2022 SAARTHI.LIVE | ALL RIGHTS RESEVERD</div>
+    </footer>
+    <!-- <script src="https://kit.fontawesome.com/82edb75879.js" crossorigin="anonymous"></script> -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/alertify.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

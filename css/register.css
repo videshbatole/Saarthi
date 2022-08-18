@@ -1,0 +1,163 @@
+.twoInput {
+  margin-top: 1%;
+  width: 15rem;
+}
+.two-Input-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.twoInput i {
+  margin-top: 1.25rem;
+}
+
+.step-detail {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+.prev-next-btn {
+  display: flex;
+}
+.login-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+#step2 {
+  display: none;
+}
+
+input[type="radio"] {
+  width: 1.25rem;
+  color: #ffffff;
+  background-color: #009ba5;
+  display: none;
+}
+label {
+  border: .0625rem solid var(--blue);
+  padding: .375rem 1.25rem;
+}
+.gender-container {
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  padding: .3125rem;
+    border: .0625rem solid var(--blue);
+}
+
+input[type="radio"]:checked + label {
+ background-color: #009aa59b;
+ color: var(--white);
+}
+.gender-title{
+padding: .625rem;
+color: var(--white);
+background-color: var(--blue);
+margin-top: auto;
+margin-bottom: auto;
+  
+}
+
+.alertify-notifier .ajs-message.ajs-error {
+  /* background: rgba(217, 92, 92, 0.95); */
+  background: #F24405 !important;
+  color: var(--white);
+}
+
+select{
+  width: 37.5rem;
+  padding: .75rem 2.5rem;
+  border: .0625rem solid var(--blue);
+  margin-top: 3%;
+  color: var(--gray);
+
+
+}
+select:focus{
+  outline: .125rem solid var(--blue);
+}
+.prev-btn{
+    padding: .625rem 6.25rem;
+  background-color: var(--white);
+  border: .125rem solid var(--blue);
+  border-radius: 2.1875rem;
+  color: var(--blue);
+  font-weight: 800;
+  margin-top: 1.25rem;
+ 
+  margin-bottom: 2rem;
+}
+
+.alertify-notifier .ajs-message.ajs-success{
+  font-weight: bold !important;
+  background-color: #08793B !important;
+  color: var(--white) !important;
+}
+#step3{
+  display: none;
+}
+
+/* ngo design starts here */
+
+
+
+.sector-row label{
+
+border: none;
+
+}
+.sector-row{
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type="checkbox"]{
+
+  display: none;
+
+
+}
+
+
+.hungerLable{
+background-color: var(lightBlue);
+ padding: 20px;
+ width: 200px;
+ height: 100px;
+ border-radius: 10px;
+ text-align: center;
+ border: 1px solid var(--blue);
+ color: var(--blue) !important ;
+font-weight: bold;
+cursor: pointer;
+outline: 3px solid var(--blue);
+margin-top: 2%;
+}
+
+
+.working-area-container{
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px;
+
+}
+
+.hungerLable i{
+  font-size: 50px;
+  
+}
+
+
+.sector-selected{
+
+  background-color: var(--blue) !important;
+  color: var(--white) !important;
+} 
+
+#nstep2 , #nstep3  , #nstep4 , #nstep5,  #nstep6,  #nstep7 {
+  display: none;
+} 
+
+
+
+
