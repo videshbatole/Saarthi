@@ -16,6 +16,7 @@
         rel="stylesheet">
     <!-- font  awsome fonts link -->
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/alertify.min.css" />
 
 </head>
 
@@ -38,7 +39,6 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#who">Who We Are</a></li>
             <li><a href="index.html#what">What We Do</a></li>
-            <li><a href="">Blogs</a></li>
             <li><a href="login.html" class="login">Login </a></li>
         </ul>
 
@@ -80,30 +80,31 @@
 
                     <div class="user-type">
 
-                        <div class="user selected " id="user1">
+                        <div class="user selected " id="login_user1">
                             <i class="fa-solid fa-user"></i> <br>
                             <span>Individual</span>
                         </div>
 
-                        <div class="user  " id="user2">
+                        <div class="user  " id="login_user2">
                             <i class="fa-solid fa-building"></i><br>
                             <span>Ngo</span>
                         </div>
 
                     </div>
-                    <form action="" method="post" id="individual">
+                    <form action="" method="post" id="login_individual">
                         <div class="form">
 
                             <div class="form-input">
-
+                                <input type="hidden" name="user_login" value="user_login">
                                 <div class="input-field">
                                     <i class="fa-light fa-user"></i>
-                                    <input type="email" name="email" placeholder="Email  ">
+                                    <input type="text" name="userEmail" placeholder="Email  " id="userEmail">
                                 </div>
 
                                 <div class="input-field">
                                     <i class="fa-thin fa-lock"></i>
-                                    <input type="password" name="email" placeholder="Password  ">
+                                    <input type="password" name="userPassword" placeholder="Password "
+                                        id="userPassword">
                                 </div>
                                 <a href="forgot.html">
                                     <h3>Fogot Password</h3>
@@ -116,19 +117,21 @@
                         </div>
                     </form>
 
-                    <form action="" method="post" id="ngo">
+                    <form action="" method="post" id="ngo_login">
                         <div class="form">
 
                             <div class="form-input">
+                                <input type="hidden" name="ngo_login" value="ngo_login">
 
                                 <div class="input-field">
                                     <i class="fa-light fa-user"></i>
-                                    <input type="email" name="email" placeholder="Email  ">
+                                    <input type="text" name="ngoEmail" placeholder="NGO Email" id="ngoEmail">
                                 </div>
 
                                 <div class="input-field">
                                     <i class="fa-thin fa-lock"></i>
-                                    <input type="password" name="email" placeholder="Password  ">
+                                    <input type="password" name="ngoPassword" placeholder="NGO Password "
+                                        id="ngoPassword">
                                 </div>
                                 <a href="forgot.html">
                                     <h3>Fogot Password</h3>
@@ -168,7 +171,8 @@
     <!-- <script src="https://kit.fontawesome.com/82edb75879.js" crossorigin="anonymous"></script> -->
     <script src="js/jquery.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/loginScript.js"></script>
+    <script src="js/alertify.min.js"></script>
 </body>
 
 </html>

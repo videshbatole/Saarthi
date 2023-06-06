@@ -1,10 +1,9 @@
 let auth_token;
 const letters = /^[A-Za-z]+$/;
 const mobilePattern = /^[0]?[789]\d{9}$/;
-const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const emailPattern1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const pincodePattern = /^(\d{4}|^\d{6})$/;
-const passwordPattern =
-  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+const passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 const panPattern = /([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
 let sectorCheckBox = 0;
 $(document).ready(function () {
@@ -156,8 +155,27 @@ $(document).ready(function () {
       mobileNo === true &&
       email === true
     ) {
-      $("#step1").css("display", "none");
-      $("#step2").css("display", "block");
+      let mobileNo = $("#mobile").val();
+      let email = $("#email").val();
+      $.ajax({
+        type: "POST",
+        url: "php/server.php",
+        data: jQuery.param({ email: email, mobile: mobileNo }),
+        success: function (result) {
+          if (result.email === "used") {
+            alertify.error("Email Is Already Used");
+            return false;
+          } else if (result.mobile === "used") {
+            alertify.error("Mobile No Is Already Used");
+            return false;
+          } else if (result.email === "unused" && result.mobile === "unused") {
+            $("#step1").css("display", "none");
+            $("#step2").css("display", "block");
+          } else {
+            alertify.error("Someting Went Wrong");
+          }
+        },
+      });
     }
   });
   // first prev clicked
@@ -192,23 +210,28 @@ $(document).ready(function () {
 
   //third click
 
-  $("#individual").submit(function (evt) {
+  $("#individual_register").submit(function (evt) {
     evt.preventDefault();
     let passwor = passwordValidation(
       $("#password").val(),
       $("#confirmPassword").val()
     );
+
+    //  ajaxOperation(
+    //    "POST",
+    //    "http://localhost/Saarthi.live/php/userRegister.php",
+    //    "individual",
+    //    "#step1",
+    //    "#step3"
+    //  );
+
     if (passwor === true) {
-         ajaxOperation(
-           "POST",
-           "http://localhost/Saarthi.live/php/userRegister.php",
-           "individual","#step1","#step3"
-         );
+      registerUser();
     }
   });
 
   $("#nfirst-next").click(function () {
-    let ngoName = nameValidation($("#ngoName").val(), "NGO ");
+    let ngoName = isEmpty($("#ngoName").val(), "NGO ");
     let registrationNo = isEmpty(
       $("#ngoRegistrationNo").val(),
       "Registration No"
@@ -229,8 +252,28 @@ $(document).ready(function () {
       mobileNo === true &&
       email === true
     ) {
-      $("#nstep1").css("display", "none");
-      $("#nstep2").css("display", "block");
+      $.ajax({
+        type: "POST",
+        url: "php/server.php",
+        data: jQuery.param({
+          ngoemail: $("#ngoEmail").val(),
+          ngomobile: $("#ngoMobileNo").val(),
+        }),
+        success: function (response) {
+          if (response.email === "unused" && response.mobile === "unused") {
+            $("#nstep1").css("display", "none");
+            $("#nstep2").css("display", "block");
+          }
+
+          if (response.email === "used") {
+            alertify.error("Email Is Already Used !!");
+          }
+
+          if (response.mobile === "used") {
+            alertify.error("Mobile No Is Already Used !!");
+          }
+        },
+      });
     }
   });
 
@@ -256,8 +299,28 @@ $(document).ready(function () {
       setlorMobileNo === true &&
       setlorEmail === true
     ) {
-      $("#nstep2").css("display", "none");
-      $("#nstep3").css("display", "block");
+      $.ajax({
+        type: "POST",
+        url: "php/server.php",
+        data: jQuery.param({
+          setloremail: $("#setlorEmail").val(),
+          setlorngomobile: $("#setlorMobileNo").val(),
+        }),
+        success: function (response) {
+          if (response.email === "unused" && response.mobile === "unused") {
+            $("#nstep2").css("display", "none");
+            $("#nstep3").css("display", "block");
+          }
+
+          if (response.email === "used") {
+            alertify.error("Email Is Already Used !!");
+          }
+
+          if (response.mobile === "used") {
+            alertify.error("Mobile No Is Already Used !!");
+          }
+        },
+      });
     }
   });
 
@@ -283,6 +346,7 @@ $(document).ready(function () {
   checkBoxValidation(4, ".workingSector");
 
   $("#nnext-4").click(function () {
+
     if (sectorCheckBox == 0) {
       alertify.error("Pls select sector");
     } else {
@@ -303,39 +367,64 @@ $(document).ready(function () {
   });
 
   $("#food").click(function () {
-    $("#foodLable").toggleClass("sector-selected");
+    $("#foodLable").addClass("sector-selected");
+    $("#rescueLable").removeClass("sector-selected");
+    $("#healthLable").removeClass("sector-selected");
+    $("#educationLable").removeClass("sector-selected");
   });
 
   $("#rescue").click(function () {
-    $("#rescueLable").toggleClass("sector-selected");
+      $("#foodLable").removeClass("sector-selected");
+      $("#healthLable").removeClass("sector-selected");
+      $("#educationLable").removeClass("sector-selected");
+    $("#rescueLable").addClass("sector-selected");
   });
 
   $("#health").click(function () {
-    $("#healthLable").toggleClass("sector-selected");
+     $("#foodLable").removeClass("sector-selected");
+     $("#rescueLable").removeClass("sector-selected");
+     $("#educationLable").removeClass("sector-selected");
+     $("#healthLable").addClass("sector-selected");
   });
 
   $("#eduction").click(function () {
-    $("#educationLable").toggleClass("sector-selected");
+         $("#foodLable").removeClass("sector-selected");
+         $("#rescueLable").removeClass("sector-selected");
+         $("#healthLable").removeClass("sector-selected");
+         $("#educationLable").addClass("sector-selected");
   });
 
-  $("#ngo").submit(function (evt) {
+  $("#ngo_regiser").submit(function (evt) {
     evt.preventDefault();
     let password = passwordValidation(
       $("#ngoPassword").val(),
       $("#ngoConfirmPassword").val()
     );
     if (password === true) {
-      ajaxOperation(
-        "POST",
-        "http://localhost/Saarthi.live/php/insert.php",
-        "ngo","#nstep1", "#nstep5"
-      );
 
-      //  var formData = {
-      //    name: $("#name").val(),
-      //    email: $("#email").val(),
-      //    superheroAlias: $("#superheroAlias").val(),
-      //  };
+      $.ajax({
+        type: "POST",
+        url: "php/register.php",
+        data: $("#ngo_regiser").serialize(),
+        success: function (response) {
+              if (response.status === "success") {
+                $("#ngo_regiser")[0].reset();
+                $("#nstep5").css("display", "none");
+                $("#nstep1").css("display", "block");
+                Swal.fire({
+                  title: "Registered",
+                  text: "You Have Successfully Registered",
+                  icon: "success",
+                });
+              }
+              if (response.status === "error") {
+                alertify.error(response.massage);
+              }
+          
+        }
+      });
+ 
+     
     }
   });
 });
@@ -392,7 +481,7 @@ function emailValidation(email) {
   if (email === "") {
     alertify.error("Email Is Required !");
     return false;
-  } else if (!email.match(emailPattern)) {
+  } else if (!email.match(emailPattern1)) {
     alertify.error("Pls Enter Valid Email Id !");
     return false;
   } else {
@@ -478,7 +567,7 @@ function step(display, hide) {
 }
 //checkBox validation
 function checkBoxValidation(count, className) {
-  $("" + className + "[type='checkbox']").click(function () {
+  $("" + className + "[type='radio']").click(function () {
     if ($(this).is(":checked")) {
       if (sectorCheckBox <= count) {
         sectorCheckBox++;
@@ -491,7 +580,7 @@ function checkBoxValidation(count, className) {
   });
 }
 
-function ajaxOperation(type, url, formId ,display ,hide) {
+function ajaxOperation(type, url, formId, display, hide) {
   // let url = "http://localhost/Saarthi.live/php/insert.php";
   // let type = "GET";
   var data = $("#" + formId + "").serialize();
@@ -503,7 +592,7 @@ function ajaxOperation(type, url, formId ,display ,hide) {
     success: function (result) {
       if (result === "Registered") {
         alertify.success("Successfully Registered");
-       document.getElementById(""+formId+"").reset();
+        document.getElementById("" + formId + "").reset();
         step(display, hide);
       } else {
         alertify.error(result);
@@ -511,3 +600,37 @@ function ajaxOperation(type, url, formId ,display ,hide) {
     },
   });
 }
+
+function registerUser() {
+  $.ajax({
+    type: "post",
+    url: "php/register.php",
+    data: $("#individual_register").serialize(),
+    success: function (response) {
+      console.log(response);
+      if (response.status === "success") {
+        $("#individual_register")[0].reset();
+        $("#step3").css("display", "none");
+        $("#step1").css("display", "block");
+        Swal.fire({
+          title: "Registered",
+          text: "You Have Successfully Registered",
+          icon: "success",
+        });
+      }
+      if (response.status === "error") {
+        alertify.error(response.massage);
+      }
+    },
+  });
+}
+
+// function emailMobileVerification(email, mobile) {}
+
+// function emailMobileReturn(email, mobile) {
+
+//   result = emailMobileVerification(email, mobile);
+
+//   console.log(result);
+
+// }

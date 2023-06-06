@@ -1,0 +1,48 @@
+
+.transaction-table{
+
+  margin-left: 1rem;
+margin-right: 1rem;
+}
+
+table {
+  width: 100%;
+
+  margin-top: 80px;
+  /* border: 1px solid #343a40; */
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th,
+td {
+  /* border: 1px solid #343a40; */
+  padding: 16px 24px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #009aa596 ;
+  color: #fff;
+  width: 20%;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #009aa524;
+}
+
+.export-btn{
+    float: left;
+    margin-top:1rem;
+    margin-bottom: 0.5rem;
+    width: 100px;
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+    background-color: white;
+    border-radius: 5px;
+    
+}

@@ -1,0 +1,160 @@
+#container-box {
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    width:100%;
+    margin-top: 2rem;
+    
+    
+}
+#container-box .campain {
+    width: 300px;
+    height: 380px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+.campain-image{
+    width: 100%;
+    height: 200px;
+}
+.campain-image img{
+    width: 100%;
+    height: 177px;
+    
+
+}
+.ngo-logo{
+    width: 50px;
+    height: 50px;
+ 
+    
+
+}
+.ngo-logo img{
+     width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+}
+
+.ngo-logo-container{
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+   
+}
+.ngo-name{
+    margin-left: 2rem;
+
+}
+
+.campain-title{
+    margin: 0.5rem 1rem 0rem 1rem;
+}
+
+/* .campain{
+    padding-top: 10px;
+} */
+.campain-description{
+    font-size: 13px;
+    font-weight: 800;
+   word-spacing: 2px;
+   margin-left: 1rem;
+   margin-right: 1rem;
+   margin-top: 0.5rem;
+   width: 270px;
+   overflow-y: hidden;
+   height: 48px;
+   color: gray;
+}
+.information-section{
+    margin-left: 16px;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+ 
+     padding-bottom: 0.5rem;
+     border-bottom: 1px solid gray;
+
+}
+
+.know-more{
+    text-decoration: none;
+}
+.know-more{
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.know-more a{
+        color: var(--blue);
+        text-decoration: none;
+        padding: 1rem;
+        margin-left: 5rem;
+        font-size: 14px;
+        font-weight: 600;
+
+}
+
+.span {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+.donate-btn{
+    background-color: var(--blue);
+}
+
+.event-information-section{
+   padding: 1rem;
+   color: black;
+   text-align: center;
+ 
+}
+.event-date-container{
+    position: absolute;
+   margin-left: 155px;
+   margin-top: 5px;
+   padding: 0.5rem;
+   color: black;
+   background-color: rgb(253, 253, 253);
+
+}
+
+.event-card-1{
+    text-decoration: none;
+
+}
+.event-ngo-circle{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50px;
+
+}
+.event-ngo-circle img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.container-event-ngo-circle{
+    padding-top: 2rem;
+    display: flex;
+}
+.event-ngo-circle-name{
+text-align: left;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}

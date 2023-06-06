@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+
+   
+    <button id="rzp-button1">Pay</button>
+    
+</body>
+<script>
+    let orderId;
+
+    $("#rzp-button1").click(function(){
+
+        getOrderId();
+    })
+    
+   function getOrderId(){
+     $.ajax({
+           type: "post",
+           url: "createorder.php",
+           success: function (res) {
+               const myArr = JSON.parse(res);
+               console.log(myArr);
+               orderId = myArr.id;
+               console.log(orderId);
+               activePayment(orderId);
+           }
+       });
+   }
+     
+     
+
+   
+
+    function activePayment(orderId){
+   
+           var options = {
+            "key": "rzp_test_zwU0KexY02Bx3R", // Enter the Key ID generated from the Dashboard
+            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Acme Corp",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+       var rzp1 = new Razorpay(options);
+        rzp1.open(event);
+        event.preventDefault();
+          
+    }
+
+
+
+
+</script>
+
+
+
+    
+
+//    const openPaymentScreen = (orderId) => {
+//         const options = {
+//             key: RAZORPAY.key,
+//             name: 'Turtlwig Payments',
+//             description: 'Help feed this hungry freelancer',
+//             order_id: orderId, //orderId
+//                 notes: {projectId},
+//                 handler(response) {
+//                     console.log(response);
+//     },
+//                 theme: {
+//                     color: '#75b6a5',
+//     },
+//   };
+//                 const rzpWindow = new window.Razorpay(options);
+//                 rzpWindow.open();
+// };
+
+    
+        
+//     const openPaymentScreen = (orderId) => {
+//         const options = {
+//             key: "rzp_test_ovu6qhYWC0BjeR",
+//             name: 'Turtlwig Payments',
+//             description: 'Help feed this hungry freelancer',
+//             order_id: id, //orderId
+//                 notes: {projectId},
+//                 handler(response) {
+//                     console.log(response);
+//     },
+//                 theme: {
+//                     color: '#75b6a5',
+//     },
+//   };
+//                 const rzpWindow = new window.Razorpay(options);
+//                 rzpWindow.open();
+// };
+    
+</script>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    const openPaymentScreen = (orderId) => {
+        const options = {
+            key: "rzp_test_ovu6qhYWC0BjeR",
+            name: 'Turtlwig Payments',
+            description: 'Help feed this hungry freelancer',
+            order_id: id, //orderId
+            notes: {
+                projectId
+            },
+            handler(response) {
+                console.log(response);
+            },
+            theme: {
+                color: '#75b6a5',
+            },
+        };
+        const rzpWindow = new window.Razorpay(options);
+        rzpWindow.open();
+    };
+</script>
+
+</html> -->

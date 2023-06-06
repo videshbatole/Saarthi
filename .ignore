@@ -1,0 +1,25 @@
+$query = "SELECT requests.request_id , requests.beneficiary_first_name , requests.beneficiary_last_name ,requests.beneficiary_email , requests.beneficiary_mobile ,requests.Issue,requests.status  ,requests.beneficiary_image ,requests.date ,ngo.ngo_name , ngo.ngo_contact_no,ngo.ngo_email ,ngo.ngo_country ,ngo.ngo_state ,ngo.ngo_city ,requests.beneficiary_country,requests.beneficiary_city,requests.beneficiary_state from user, requests,ngo where user.userId=requests.userId AND ngo.ngo_id=requests.ngo_id AND requests.userId='1001'";
+
+
+
+
+request_id
+beneficiary_first_name
+beneficiary_last_name
+requests.beneficiary_country
+requests.beneficiary_city
+requests.beneficiary_state
+requests.beneficiary_email
+requests.beneficiary_mobile
+requests.Issue
+requests.status
+requests.beneficiary_image
+requests.date
+ngo.ngo_name
+ngo.ngo_contact_no
+ngo.ngo_email
+ngo.ngo_country
+ngo.ngo_state
+ngo.ngo_city
+
+
